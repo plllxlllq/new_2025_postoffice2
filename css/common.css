@@ -948,17 +948,15 @@ a {
   height: var(--kpost-number-17);
   padding: var(--kpost-number-0) var(--kpost-number-9);
   font-size: var(--kpost-fs-lg);
-
+  background: var(--kpost-white);
+}
+.btn.primary {
   background-color: var(--kpost-primary-60);
   border-color: var(--kpost-primary-60);
   color: var(--kpost-white);
 }
-
-.btn:hover {
-  background-color: var(--kpost-primary-70);
-  border-color: var(--kpost-primary-70);
-}
-
+.btn.primary:focus,
+.btn.primary:hover,
 .btn.primary:active {
   background-color: var(--kpost-primary-70);
   border-color: var(--kpost-primary-70);
