@@ -1158,7 +1158,7 @@
 }
 .tab.fill .active .btn-tab {
   background-color: var(--kpost-primary-60);
-  border-color: 0.1rem solid var(--kpost-primary-60);
+  border: 0.1rem solid var(--kpost-primary-60);
   color: var(--kpost-white);
   box-shadow: 0rem 0.4rem 0.4rem 0.4rem rgba(0, 0, 0, 0.08);
 }
@@ -1435,7 +1435,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  grid-area: var(--kpost-gap-2);
+  gap: var(--kpost-gap-2);
 }
 .tab_ps_list .structured-list .tit {
   font-size: var(--kpost-fs-lg);
