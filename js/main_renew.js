@@ -479,3 +479,90 @@ window.addEventListener("scroll", () => {
 window.addEventListener("resize", () => {
   windowSize.setWinSize();
 });
+
+//메인 배너
+const vbSwiper = new Swiper(".vb-swiper .swiper", {
+  slidesPerView: 1,
+  spaceBetween: 16,
+  speed: 700,
+  loop: true,
+  breakpoints: {
+    100: {
+      slidesPerView: 1,
+    },
+    767: {
+      slidesPerView: 2,
+    },
+    1025: {
+      slidesPerView: 1,
+    },
+  },
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+  },
+
+  navigation: {
+    nextEl: ".vb-swiper .swiper-button-next",
+    prevEl: ".vb-swiper .swiper-button-prev",
+  },
+  pagination: {
+    el: ".vb-swiper .swiper-pagination",
+    type: "fraction",
+  },
+});
+
+const $vbSwiperPlay = document.querySelector(".vb-swiper .swiper-button-play");
+const $vbSwiperStop = document.querySelector(".vb-swiper .swiper-button-stop");
+$vbSwiperPlay.style.display = "none";
+$vbSwiperPlay.addEventListener("click", () => {
+  vbSwiper.autoplay.start();
+  $vbSwiperStop.style.display = "";
+  $vbSwiperPlay.style.display = "none";
+});
+$vbSwiperStop.addEventListener("click", () => {
+  vbSwiper.autoplay.stop();
+  $vbSwiperStop.style.display = "none";
+  $vbSwiperPlay.style.display = "";
+});
+
+//팝업레이어 슬라이드
+const popupSwiper = new Swiper(".popup-swiper .swiper", {
+  slidesPerView: 1,
+  spaceBetween: 16,
+  speed: 700,
+  loop: true,
+  autoHeight: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+  },
+
+  navigation: {
+    nextEl: ".popup-swiper .swiper-button-next",
+    prevEl: ".popup-swiper .swiper-button-prev",
+  },
+  pagination: {
+    el: ".popup-swiper .swiper-pagination",
+    type: "fraction",
+  },
+});
+const $popupSwiperPlay = document.querySelector(
+  ".popup-swiper .swiper-button-play"
+);
+const $popupSwiperStop = document.querySelector(
+  ".popup-swiper .swiper-button-stop"
+);
+$popupSwiperPlay.style.display = "none";
+$popupSwiperPlay.addEventListener("click", () => {
+  popupSwiper.autoplay.start();
+  $popupSwiperStop.style.display = "";
+  $popupSwiperPlay.style.display = "none";
+});
+$popupSwiperStop.addEventListener("click", () => {
+  popupSwiper.autoplay.stop();
+  $popupSwiperStop.style.display = "none";
+  $popupSwiperPlay.style.display = "";
+});
