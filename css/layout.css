@@ -1423,6 +1423,11 @@
     padding-left: 1.6rem;
   }
 }
+@media (max-width: 360px) {
+  .main-quick .cs-text {
+    gap: var(--kpost-gap-4);
+  }
+}
 .main-quick .cs-text > .tit {
   display: inline-flex;
   align-items: center;
@@ -1465,6 +1470,11 @@
   .quick-link.q-liink-basic {
     width: 100%;
     max-width: unset;
+  }
+}
+@media (max-width: 767px) {
+  .main-quick .cs-text .cs-info .cs-num {
+    font-size: 3.6rem;
   }
 }
 .main-quick .quick-link a .ico {
