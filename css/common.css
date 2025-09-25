@@ -927,9 +927,6 @@ ul.ulfl > li {
 }
 
 /* 버튼 */
-a {
-  transition: var(--kpost-transition-base);
-}
 
 .btn-wrap {
   width: 100%;
