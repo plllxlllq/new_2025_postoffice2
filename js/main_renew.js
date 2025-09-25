@@ -486,17 +486,7 @@ const vbSwiper = new Swiper(".vb-swiper .swiper", {
   spaceBetween: 16,
   speed: 700,
   loop: true,
-  breakpoints: {
-    100: {
-      slidesPerView: 1,
-    },
-    767: {
-      slidesPerView: 2,
-    },
-    1025: {
-      slidesPerView: 1,
-    },
-  },
+
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,
