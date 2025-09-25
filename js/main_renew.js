@@ -88,7 +88,6 @@ const common = {
         ) {
           event.preventDefault();
           firstFocusableElement.focus();
-          // 모달 오픈 후 첫 초점 역방향 제어(modal-content가 첫초점이 아니면 사용 안해도 됨)
         } else if (
           event.key === "Tab" &&
           event.shiftKey &&
@@ -422,9 +421,11 @@ const goTopBtn = () => {
 // mainPopuplayer
 const mainPopuplayer = () => {
   const popup = document.querySelector(".layer-popup");
+  const popupin = document.querySelector(".layer-popup .inner");
+  const popoutfocus = document.querySelector("#skipNavi .slip_link");
   const body = document.body;
   const todayClose = document.getElementById("todayClose");
-  const closeBtn = document.querySelector(".btn.sm"); // 팝업 닫기 버튼
+  const closeBtn = document.querySelector(".btn-popup-close"); // 팝업 닫기 버튼
   const popupKey = "popupClosedDate";
 
   if (!popup) return; // 팝업이 없으면 실행 중단
@@ -445,13 +446,22 @@ const mainPopuplayer = () => {
   popup.classList.add("on");
   body.classList.add("haspop");
 
+  if (popup.classList.contains("on")) {
+    popupin.setAttribute("tabindex", 0);
+    document.getElementById("wrap")?.setAttribute("inert", "");
+    common.focusTrap(popup);
+  } else {
+    mobileGnb.style.display = "none";
+    popoutfocus.focus;
+  }
+
   // 닫기 버튼 클릭 이벤트
   closeBtn?.addEventListener("click", function () {
     // 오늘 하루 닫기 체크되었으면 저장
     if (todayClose.checked) {
       localStorage.setItem(popupKey, today);
     }
-
+    document.getElementById("wrap")?.removeAttribute("inert");
     popup.classList.add("off");
     body.classList.remove("haspop");
     popup.style.display = "none";
@@ -488,7 +498,7 @@ const vbSwiper = new Swiper(".vb-swiper .swiper", {
   loop: true,
 
   autoplay: {
-    delay: 2900,
+    delay: 2500,
     disableOnInteraction: false,
     pauseOnMouseEnter: true,
   },
