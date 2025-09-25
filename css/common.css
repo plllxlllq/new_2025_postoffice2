@@ -1282,7 +1282,6 @@ a {
   flex-direction: column;
 }
 /* 체크박스 */
-
 input[type="checkbox"] {
   position: absolute !important;
   width: 1px !important;
